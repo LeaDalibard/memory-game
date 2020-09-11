@@ -23,8 +23,7 @@
     }
 
     var randomCard = shuffle(card);
-    for (var i = 0; i < randomCard.length;
-    i++){ document.getElementById("imgb-" + i).src = randomCard[i];}
+    for (var i = 0; i < randomCard.length; i++){ document.getElementById("imgb-" + i).src = randomCard[i];}
 
     /*------------Turning images-----------------*/
 
