@@ -27,18 +27,54 @@
         /*------------Turning images-----------------*/
 
         var count = 0;
-        cardOne = "";
-        cardTwo = "";
         Array.from(document.querySelectorAll("button")).forEach(function ($btn, index) {
             $btn.addEventListener("click", function () {
                 count = count + 1;
                 document.getElementById("img-" + index).src = randomCard[index];
                 if (count === 2) {
-                    cardTwo = randomCard[index]
+                    function fixCardTwo() {
+                        var cardTwo = randomCard[index]
+                        var indexCardTwo=index
+                        console.log(cardTwo);
+                        //count = 0;
+                    }
                 } else {
-                    cardOne = randomCard[index]
+                    function fixCardOne() {
+                        var cardOne = randomCard[index]
+                        var indexCardOne=index
+                    };
                 }
-                ;
+            });
+        });
+
+        function match() {
+            let promiseFirst = Promise.resolve(cardOne)
+            promiseFirst.then(value => {
+                let promiseTwo = Promise.resolve(cardTwo)
+                promiseTwo.then( result=> {
+                    if(cardOne !== cardTwo){setTimeout(function () {
+                        document.getElementById("img-" + indexCardOne).src = "images/pokeball.png";
+                        document.getElementById("img-" + indexCardTwo).src = "images/pokeball.png";
+                    }, 1000);}
+                })
+            })
+
+        }
+
+
+    })();
+
+/*
+
+ Array.from(document.querySelectorAll("button")).forEach(function ($btn, index) {
+            $btn.addEventListener("click", function () {
+                count = count + 1;
+                document.getElementById("img-" + index).src = randomCard[index];
+                if (count === 2) {
+                    cardTwo = randomCard[index];
+                } else {
+                    cardOne = randomCard[index];
+                }
                 if (cardOne !== cardTwo) {
                     function returnCard() {
                         setTimeout(function () {
@@ -58,28 +94,5 @@
         });
     }
 )
-
-();
-
-/*  var clickOne=Array.from(document.querySelectorAll("button")).forEach(function ($btn, index) {
-      $btn.addEventListener("click", function () {
-          document.getElementById("img-" + index).src = randomCard[index];
-          i = randomCard[index];
-          indexI=index;
-      });
-  });
-
-
-  Array.from(document.querySelectorAll("button")).forEach(function ($btn, index) {
-      $btn.addEventListener("click",clickOne, function () {
-          document.getElementById("img-" + index).src = randomCard[index];
-          j = randomCard[index];
-          indexJ=index;
-      });
-  });
-
-  if (i !== j){document.getElementById("img-" + indexI).src = "images/pokeball.png";
-      document.getElementById("img-" + indexJ).src = "images/pokeball.png";}
-
-})*/
+*/
 
