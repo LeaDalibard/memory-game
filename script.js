@@ -8,9 +8,7 @@
         "images/squirtle.png",
         "images/pikachu.png"
     ];
-
-
-
+    /*-----------Randomizing images--------------*/
     var card = pokemon.concat(pokemon);
 
     function shuffle(a) {
@@ -23,15 +21,41 @@
         }
         return a;
     }
-    var randomCard= shuffle(card);
-    console.log(randomCard);
 
-    Array.from(document.querySelectorAll("button")).forEach(function ($btn, index) {
+    var randomCard = shuffle(card);
+
+    /*------------Promises to turn images-----------------*/
+
+    Array.from(document.querySelectorAll("button")).forEach(function ($btn) {
         $btn.addEventListener("click", function () {
-            document.getElementById("img-" + index).src = randomCard[index];
+            performOperation($btn.id);
         });
     });
+    var performOperation = function (operation) {
+
+        };
 
 })
 
-();
+    /*  var clickOne=Array.from(document.querySelectorAll("button")).forEach(function ($btn, index) {
+          $btn.addEventListener("click", function () {
+              document.getElementById("img-" + index).src = randomCard[index];
+              i = randomCard[index];
+              indexI=index;
+          });
+      });
+
+
+      Array.from(document.querySelectorAll("button")).forEach(function ($btn, index) {
+          $btn.addEventListener("click",clickOne, function () {
+              document.getElementById("img-" + index).src = randomCard[index];
+              j = randomCard[index];
+              indexJ=index;
+          });
+      });
+
+      if (i !== j){document.getElementById("img-" + indexI).src = "images/pokeball.png";
+          document.getElementById("img-" + indexJ).src = "images/pokeball.png";}
+
+  })*/
+
