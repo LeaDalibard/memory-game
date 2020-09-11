@@ -24,3 +24,5 @@ We want to recreate the game `memory`. It is a game where  you have a bunch of c
 - [ ] Make it pleasing to look at
 - [ ] Multiplayer (local)
 
+### Link to game (/still in process):
+[https://leadalibard.github.io/memory-game/](https://leadalibard.github.io/memory-game/)
